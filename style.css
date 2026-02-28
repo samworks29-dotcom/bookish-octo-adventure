@@ -1,45 +1,92 @@
-.kj-land-surveyors {
-    font-family: 'Arial', sans-serif;
-    background: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
+:root {
+    --primary-color: #004e94;
+    --secondary-color: #f2f2f2;
+    --accent-color: #ffcc00;
+    --font-family: 'Arial', sans-serif;
+    --font-size-base: 16px;
+    --spacing: 8px;
+    --border-radius: 4px;
 }
 
-header {
-    background: #003366;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    background-color: var(--secondary-color);
+    color: #333;
+}
+
+.header, .footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--spacing) calc(var(--spacing)*2);
+}
+
+.header h1, .footer h1 {
+    margin: 0;
 }
 
 nav {
-    background: #005f99;
-    color: white;
     display: flex;
-    justify-content: space-around;
-    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav a {
     color: white;
     text-decoration: none;
+    padding: var(--spacing);
+    transition: background-color 0.3s;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background-color: var(--accent-color);
 }
 
-main {
-    padding: 20px;
+.main {
+    padding: calc(var(--spacing)*2);
 }
 
-footer {
-    background: #003366;
+.card {
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    padding: var(--spacing);
+    margin-bottom: calc(var(--spacing)*2);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    .header, .footer {
+        text-align: center;
+    }
+    nav {
+        flex-direction: column;
+    }
+}
+
+.button {
+    background-color: var(--primary-color);
     color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    padding: var(--spacing) calc(var(--spacing)*2);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: var(--accent-color);
+}
+
+.animation {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
