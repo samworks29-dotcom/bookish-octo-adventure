@@ -1,92 +1,75 @@
-:root {
-    --primary-color: #004e94;
-    --secondary-color: #f2f2f2;
-    --accent-color: #ffcc00;
-    --font-family: 'Arial', sans-serif;
-    --font-size-base: 16px;
-    --spacing: 8px;
-    --border-radius: 4px;
+.* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
 }
 
 body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
-    font-family: var(--font-family);
-    font-size: var(--font-size-base);
-    background-color: var(--secondary-color);
+    padding: 0;
+    background: #f4f4f4;
     color: #333;
 }
 
-.header, .footer {
-    background-color: var(--primary-color);
-    color: white;
-    padding: var(--spacing) calc(var(--spacing)*2);
-}
-
-.header h1, .footer h1 {
-    margin: 0;
-}
-
-nav {
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: #333;
+    padding: 1rem;
 }
 
-nav a {
-    color: white;
+.navbar a {
+    color: #fff;
     text-decoration: none;
-    padding: var(--spacing);
-    transition: background-color 0.3s;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s;
 }
 
-nav a:hover {
-    background-color: var(--accent-color);
+.navbar a:hover {
+    background: #575757;
 }
 
-.main {
-    padding: calc(var(--spacing)*2);
+.hero {
+    background: url('hero.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
 }
 
-.card {
-    border: 1px solid #ddd;
-    border-radius: var(--border-radius);
-    padding: var(--spacing);
-    margin-bottom: calc(var(--spacing)*2);
-    transition: transform 0.3s;
+.services, .stats, .about, .testimonials, .contact {
+    padding: 2rem;
+    text-align: center;
 }
 
-.card:hover {
-    transform: scale(1.05);
+.footer {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
 }
 
-@media (max-width: 600px) {
-    .header, .footer {
-        text-align: center;
-    }
-    nav {
+@media (max-width: 768px) {
+    .navbar {
         flex-direction: column;
     }
-}
-
-.button {
-    background-color: var(--primary-color);
-    color: white;
-    padding: var(--spacing) calc(var(--spacing)*2);
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.button:hover {
-    background-color: var(--accent-color);
-}
-
-.animation {
-    animation: fadeIn 1s ease-in-out;
+    .hero {
+        height: 50vh;
+    }
 }
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
 }
